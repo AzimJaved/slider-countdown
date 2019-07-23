@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Countdown to first vacation in ages
+    </title>
+    <link type="text/css" rel="stylesheet" href="assets/clock_assets/flipclock.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+    <style>
+        html,
+        body,
+        .wrap {
+            height: 100%;
+        }
+    </style>
+    <div class="wrap valign-wrapper center-align">
+        <div class="row">
+            <div class="col s12">
+                <div class="card blue-grey darken-1">
+                    <div class="clock-builder-output">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider fullscreen">
+        <ul class="slides">
+            <li>
+                <div class="caption center-align">
+                    <h3>Text</h3>
+                    <h5 class="light grey-text text-lighten-3">Subtext</h5>
+                </div>
+                <img src="assets/img/1.jpeg">
+            </li>
+            <li>
+                <img src="assets/img/2.jpeg">
+            </li>
+            <li>
+                <img src="assets/img/3.jpeg">
+            </li>
+            <li>
+                <img src="assets/img/4.jpeg">
+    </div>
+    </li>
+    </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        if (!window.jQuery) {
+            document.write('<script src="bin/jquery-3.2.1.min.js"><\/script>');
+        }
+    </script>
+    <script src="assets/js/materialize.js"></script>
+    <script type="text/javascript" src="assets/clock_assets/flipclock.js"></script>
+    <style text="text/css">
+        body .flip-clock-wrapper ul li a div div.inn,
+        body .flip-clock-small-wrapper ul li a div div.inn {
+            color: #CCCCCC;
+            background-color: #333333;
+        }
+        
+        body .flip-clock-dot,
+        body .flip-clock-small-wrapper .flip-clock-dot {
+            background: #323434;
+        }
+        
+        body .flip-clock-wrapper .flip-clock-meridium a,
+        body .flip-clock-small-wrapper .flip-clock-meridium a {
+            color: #323434;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.slider').slider({
+                full_width: true
+            });
+        });
+        $(function() {
+            FlipClock.Lang.Custom = {
+                days: 'Days',
+                hours: 'Hours',
+                minutes: 'Minutes',
+                seconds: 'Seconds'
+            };
+            var opts = {
+                clockFace: 'DailyCounter',
+                countdown: true,
+                language: 'Custom'
+            };
+            var countdown = 1565844900 - ((new Date().getTime()) / 1000); // from: 08/15/2019 10:25 am +0530
+            countdown = Math.max(1, countdown);
+            $('.clock-builder-output').FlipClock(countdown, opts);
+        });
+    </script>
+</body>
+
+</html>
